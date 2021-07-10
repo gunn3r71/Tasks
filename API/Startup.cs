@@ -1,6 +1,7 @@
 using API.Data.Contexts;
 using API.Data.Repositories;
 using API.Domain.Interfaces;
+using API.Profiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +32,7 @@ namespace API
             );
 
             services.AddTransient<ITaskRepository, TaskRepository>();
+            services.AddAutoMapper(typeof(TaskProfile));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
