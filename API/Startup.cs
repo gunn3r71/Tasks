@@ -1,6 +1,7 @@
+using API.Data;
 using API.Data.Contexts;
+using API.Data.Interfaces;
 using API.Data.Repositories;
-using API.Domain.Interfaces;
 using API.Profiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +33,8 @@ namespace API
             );
 
             services.AddTransient<ITaskRepository, TaskRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
             services.AddAutoMapper(typeof(TaskProfile));
 
             services.AddControllers();

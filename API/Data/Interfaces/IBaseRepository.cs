@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace API.Domain.Interfaces
+namespace API.Data.Interfaces
 {
     public interface IBaseRepository<T>
     {
